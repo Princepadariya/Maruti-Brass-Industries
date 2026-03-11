@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Products | Maruti Brass Industries</title>
+  <meta name="description" content="Explore our range of premium hinges, knobs, and precision metal components." />
+  <!-- Link to CSS via entry point if using Vite, or direct link if needed. In Vite vanilla, we usually import it in main.js but for multiple html files we might need it here too or have a shared main.js -->
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+
+<body>
+  <nav id="navbar">
+    <div class="logo-container">
+      <!-- Refined industrial logo matching reference -->
+      <svg viewBox="0 0 100 100" width="45" height="45">
+        <rect x="5" y="5" width="90" height="90" fill="none" stroke="#222" stroke-width="1.5" />
+        <circle cx="50" cy="50" r="40" fill="none" stroke="#222" stroke-width="2" />
+        <circle cx="50" cy="50" r="32" fill="none" stroke="#222" stroke-width="1" stroke-dasharray="2 2" />
+        <text x="50" y="58" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="32" font-weight="800"
+          fill="#222">M</text>
+        <text x="50" y="9" text-anchor="middle" font-size="6" font-weight="bold" fill="#222" letter-spacing="1">MARUTI
+          BRASS</text>
+      </svg>
+    </div>
+
+    <div class="grid-menu" id="menu-toggle">
+      <span></span><span></span><span></span>
+      <span></span><span></span><span></span>
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <div class="menu-overlay" id="menu-overlay">
+    <div class="menu-close" id="menu-close">&times;</div>
+    <ul class="overlay-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/products.html">Products</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+  </div>
+
+
+  <main>
+    <section class="page-header" style="padding-top: 150px; text-align: center;">
+      <div class="container">
+        <h1 style="font-size: 3.5rem; margin-bottom: 1rem;">Our <span class="gold">Products</span></h1>
+        <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">
+          We manufacture a wide array of high-precision brass hardware designed to stand the test of time.
+        </p>
+      </div>
+    </section>
+
+    <section class="products-grid">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem;">
+          <!-- Product Card 1 -->
+          <div class="glass" style="padding: 2rem; border-radius: 12px; transition: var(--transition-smooth);">
+            <div
+              style="height: 200px; background: rgba(255,255,255,0.05); border-radius: 8px; margin-bottom: 1.5rem; overflow: hidden;">
+              <img src="/images/hinge.jpg" alt="Precision Hinges"
+                style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8; transition: var(--transition-smooth);"
+                onerror="this.src='https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=500&auto=format&fit=crop';">
+            </div>
+            <h3 style="margin-bottom: 0.5rem;">Precision Hinges</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">Heavy-duty brass hinges for
+              industrial and residential applications.</p>
+            <a href="#" class="btn btn-outline" style="padding: 0.5rem 1.5rem; font-size: 0.8rem;">Details</a>
+          </div>
+
+          <!-- Product Card 2 -->
+          <div class="glass" style="padding: 2rem; border-radius: 12px; transition: var(--transition-smooth);">
+            <div
+              style="height: 200px; background: rgba(255,255,255,0.05); border-radius: 8px; margin-bottom: 1.5rem; overflow: hidden;">
+              <img src="/images/knob.jpg" alt="Architectural Knobs"
+                style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8; transition: var(--transition-smooth);"
+                onerror="this.src='https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=500&auto=format&fit=crop';">
+            </div>
+            <h3 style="margin-bottom: 0.5rem;">Architectural Knobs</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">Elegant and durable knobs
+              crafted from premium solid brass.</p>
+            <a href="#" class="btn btn-outline" style="padding: 0.5rem 1.5rem; font-size: 0.8rem;">Details</a>
+          </div>
+
+          <!-- Product Card 3 -->
+          <div class="glass" style="padding: 2rem; border-radius: 12px; transition: var(--transition-smooth);">
+            <div
+              style="height: 200px; background: rgba(255,255,255,0.05); border-radius: 8px; margin-bottom: 1.5rem; overflow: hidden;">
+              <img src="/images/components.jpg" alt="Custom Components"
+                style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8; transition: var(--transition-smooth);"
+                onerror="this.src='https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?q=80&w=500&auto=format&fit=crop';">
+            </div>
+            <h3 style="margin-bottom: 0.5rem;">Custom Components</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">Bespoke metal components
+              engineered to your exact specifications.</p>
+            <a href="#" class="btn btn-outline" style="padding: 0.5rem 1.5rem; font-size: 0.8rem;">Details</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="/src/main.js"></script>
+  <script>
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+  </script>
+</body>
+
+</html>
