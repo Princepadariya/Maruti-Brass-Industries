@@ -384,7 +384,7 @@ nav.scrolled {
 /* MISSION: text on left, connector extends to right */
 .mv-row-mission {
   align-items: center;
-  padding: 5rem 0 1.5rem 7rem;
+  padding: 7rem 0 5rem 7rem;
   container-type: inline-size;
 }
 
@@ -400,7 +400,7 @@ nav.scrolled {
 /* VISION: pushed right, connector extends to right edge */
 .mv-row-vision {
   align-items: center;
-  padding: 1.5rem 0 5rem 0;
+  padding: 5rem 0 7rem 0;
   padding-left: 50%;
 }
 
@@ -687,10 +687,13 @@ nav.scrolled {
   text-decoration: none;
   letter-spacing: 0.05em;
   transition: var(--transition-smooth);
+  opacity: 0;
+  visibility: hidden;
 }
 
-.product-view:hover {
-  opacity: 0.8;
+.product-card:hover .product-view {
+  opacity: 1;
+  visibility: visible;
 }
 
 /* ── Testimonials Section ────────────────────────── */
@@ -726,10 +729,7 @@ nav.scrolled {
   transition: var(--transition-smooth);
 }
 
-/* Specifically target the middle (2nd) testimonial card's divider to be gold */
-.testimonial-card:nth-child(5) .t-divider {
-  background-color: #C9A240;
-}
+
 
 .testimonial-text {
   font-family: 'Source Code Pro', monospace;
@@ -760,9 +760,7 @@ nav.scrolled {
   background-color: #C9A240;
 }
 
-.testimonial-card:nth-child(5):hover .t-divider {
-  background-color: #FFFFFF;
-}
+
 
 /* ── CTA Section ─────────────────────────────────── */
 .cta-section {
@@ -878,6 +876,11 @@ nav.scrolled {
   line-height: 1.8;
 }
 
+.contact-col .footer-links a,
+.footer-address {
+  color: #CBCBCB;
+}
+
 .footer-links a:hover {
   color: #ffffff;
 }
@@ -911,6 +914,7 @@ nav.scrolled {
 
 .credits-gold {
   color: var(--primary-gold);
+  text-decoration: none;
 }
 
 .credits {
@@ -1046,6 +1050,32 @@ nav.scrolled {
   color: var(--primary-gold);
 }
 
+/* ── Products Page ────────────────────────────────── */
+.products-header-section {
+  padding-top: 180px;
+  padding-bottom: 4rem;
+}
+
+.products-title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(3rem, 6vw, 3.75rem);
+  font-weight: 600;
+}
+
+.products-title.gold {
+  color: var(--primary-gold);
+}
+
+.products-grid-section {
+  padding-top: 4rem;
+}
+
+.products-divider {
+  width: 100%;
+  height: 1px;
+  background-color: #2C2D2E;
+}
+
 .contact-divider {
   width: 100%;
   height: 1px;
@@ -1111,7 +1141,7 @@ nav.scrolled {
 .info-group label {
   font-family: 'Source Code Pro', monospace;
   font-size: 0.85rem;
-  color: var(--text-muted);
+  color: #C9A240;
   text-transform: uppercase;
   letter-spacing: 4%;
   font-weight: 300;
