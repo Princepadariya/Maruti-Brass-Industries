@@ -160,6 +160,7 @@ nav.scrolled {
   position: absolute;
   inset: 0;
   z-index: 1;
+  background: rgba(30, 30, 30, 0.7);
 }
 
 .hero .container {
@@ -369,7 +370,7 @@ nav.scrolled {
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: rgba(30, 30, 30, 0.1);
+  background: rgba(30, 30, 30, 0.7);
 }
 
 .mv-inner {
@@ -888,8 +889,28 @@ nav.scrolled {
   color: #CBCBCB;
 }
 
-.footer-links a:hover {
-  color: #ffffff;
+.footer-links a {
+  position: relative;
+  display: inline-block;
+}
+
+.links-col .footer-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-gold);
+  transition: width 0.3s ease-out;
+}
+
+.links-col .footer-links a:hover::after {
+  width: 100%;
+}
+
+.links-col .footer-links a:hover {
+  color: var(--primary-gold);
 }
 
 .footer-hours {
