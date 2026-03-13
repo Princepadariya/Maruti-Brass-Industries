@@ -1080,16 +1080,48 @@ nav.scrolled {
     height: 70px;
   }
 
+  .logo-container img {
+    height: 32px; /* Smaller logo for mobile */
+    width: auto;
+  }
+
+  .logo-container a {
+    margin-top: 15px; /* Added more space from top */
+    display: flex;
+    align-items: center;
+  }
+
   .nav-links {
     display: none;
   }
 
   .hero-title {
-    font-size: 3.5rem;
+    font-size: clamp(2rem, 9vw, 2.8rem); /* Slightly smaller to fit long words like 'Permanence' */
+    line-height: 1.1;
+    word-break: break-word;
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-subtitle-top {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    padding: 0 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-description {
+    font-size: 0.95rem;
+    padding: 0 1rem;
+    line-height: 1.5;
   }
 
   .hero {
-    padding-top: 150px;
+    padding: 120px 0 60px 0;
+    height: auto;
+    min-height: 90vh;
   }
 
   .hero-cta {
@@ -1098,13 +1130,14 @@ nav.scrolled {
     max-width: 300px;
   }
 
+  .hero .container,
   .about-section .container,
   .products-section .container,
   .testimonials-section .container,
   .footer .container-footer,
   .container-contact {
-    padding-left: 2rem !important;
-    padding-right: 2rem !important;
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
   }
 
   .mv-row-mission,
