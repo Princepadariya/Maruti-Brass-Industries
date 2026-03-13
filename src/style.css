@@ -1095,7 +1095,7 @@ nav.scrolled {
   }
 
   .logo-container img {
-    height: 80px;
+    height: 60px;
     /* Smaller logo for mobile */
     width: auto;
   }
@@ -1112,7 +1112,7 @@ nav.scrolled {
   }
 
   .hero-title {
-    font-size: clamp(2rem, 9vw, 2.8rem);
+    font-size: clamp(2rem, 15vw, 2.9rem);
     /* Slightly smaller to fit long words like 'Permanence' */
     line-height: 1.1;
     word-break: break-word;
