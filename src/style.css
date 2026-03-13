@@ -71,10 +71,23 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 body {
   min-height: 100vh;
   overflow-x: hidden;
   background: var(--bg-dark);
+  width: 100%;
+  position: relative;
+}
+
+section {
+  padding: 8rem 0;
+  overflow-x: hidden;
+  /* Prevent horizontal scroll from internal elements like reveal animations */
 }
 
 h1,
@@ -355,6 +368,16 @@ nav.scrolled {
 
 .reveal-right {
   transform: translateX(40px);
+}
+
+/* Fix for horizontal scroll caused by translateX reveal on small screens */
+@media (max-width: 768px) {
+
+  .reveal-left,
+  .reveal-right {
+    transform: translateY(20px);
+    /* Fallback to a vertical reveal on mobile */
+  }
 }
 
 /* Staggered Reveal Delays */
@@ -1086,7 +1109,7 @@ nav.scrolled {
 /* Responsive */
 @media (max-width: 900px) {
   nav {
-    padding: 2.2rem 2rem 0 2rem;
+    padding: 0.75rem 1.6rem 0 1.6rem;
     height: 80px;
   }
 
@@ -1201,6 +1224,18 @@ nav.scrolled {
   .products-grid,
   .testimonials-grid {
     grid-template-columns: 1fr;
+  }
+
+  .testimonial-card {
+    padding: 1.5rem;
+    margin: 0;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.04);
   }
 
   .cta-buttons {
@@ -1526,8 +1561,8 @@ nav.scrolled {
     grid-row: 2;
     text-align: center;
     /* Centered under the image */
-    margin-top: 0.75rem;
-    font-size: 0.9rem;
+    margin-top: -1rem;
+    font-size: 0.8rem;
     font-weight: 500;
     order: 4;
   }
