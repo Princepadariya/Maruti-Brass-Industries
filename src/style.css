@@ -22,6 +22,49 @@
   scroll-behavior: smooth;
 }
 
+/* Scroll Progress Bar */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: var(--primary-gold);
+  z-index: 2100;
+  transition: width 0.1s ease-out;
+  box-shadow: 0 0 10px rgba(201, 162, 64, 0.5);
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 45px;
+  height: 45px;
+  background: var(--bg-surface);
+  border: 1px solid var(--primary-gold);
+  color: var(--primary-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1500;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition-smooth);
+}
+
+.back-to-top.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  background: var(--primary-gold);
+  color: #000;
+  transform: translateY(-5px);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -109,9 +152,17 @@ nav.scrolled {
   justify-content: center;
 }
 
+.logo-container a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
 .logo-container img {
   max-width: 100%;
   height: auto;
+  display: block;
 }
 
 .menu-icon {
@@ -276,11 +327,47 @@ nav.scrolled {
   }
 }
 
+/* Scroll Reveal Base */
+.reveal {
+  opacity: 0;
+  transition: opacity 1s cubic-bezier(0.165, 0.84, 0.44, 1), 
+              transform 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  will-change: transform, opacity;
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translate(0, 0) !important;
+}
+
+/* Reveal Variants */
+.reveal-up {
+  transform: translateY(40px);
+}
+
+.reveal-down {
+  transform: translateY(-40px);
+}
+
+.reveal-left {
+  transform: translateX(-40px);
+}
+
+.reveal-right {
+  transform: translateX(40px);
+}
+
+/* Staggered Reveal Delays */
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+
 /* ── About Section ───────────────────────────────── */
 .about-section {
   background: var(--bg-dark);
   padding: 7rem 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .about-section .container {
@@ -720,6 +807,19 @@ nav.scrolled {
   gap: 3rem;
 }
 
+.testimonial-card {
+  transition: var(--transition-smooth);
+  cursor: default;
+  padding: 2rem;
+  margin: -2rem;
+  border-radius: 8px;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-12px);
+  background: rgba(255, 255, 255, 0.03);
+}
+
 .testimonial-header-cell {
   grid-column: 1;
   margin-bottom: 2rem;
@@ -728,10 +828,31 @@ nav.scrolled {
 .testimonial-card .t-divider {
   width: 100%;
   height: 1px;
-  background-color: #CBCBCB;
+  background-color: rgba(203, 203, 203, 0.3);
   margin-bottom: 2rem;
-  transition: var(--transition-smooth);
+  position: relative;
+  overflow: visible;
 }
+
+.testimonial-card .t-divider::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: 0 0 10px rgba(201, 162, 64, 0.3);
+}
+
+.testimonial-card:hover .t-divider::after {
+  transform: scaleX(1);
+}
+
+/* Removed previous direct divider hover styles */
 
 
 
@@ -753,16 +874,23 @@ nav.scrolled {
   font-weight: 400;
   color: var(--primary-gold);
   letter-spacing: 0.02em;
+  transition: var(--transition-smooth);
+}
+
+.testimonial-card:hover .testimonial-author {
+  letter-spacing: 0.06em;
+  filter: brightness(1.2);
+  transform: translateX(5px);
 }
 
 /* Hover Effects */
 .testimonial-card:hover .testimonial-text {
   color: #FFFFFF;
+  transform: translateX(5px);
+  filter: brightness(1.1);
 }
 
-.testimonial-card:hover .t-divider {
-  background-color: #C9A240;
-}
+/* Removed redundant divider hover as it's handled above with scale */
 
 
 
