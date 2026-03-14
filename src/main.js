@@ -63,16 +63,19 @@ const menuOverlay = document.getElementById('menu-overlay');
 if (menuToggle && menuOverlay && menuClose) {
     menuToggle.addEventListener('click', () => {
         menuOverlay.classList.add('active');
+        document.body.classList.add('menu-active');
     });
 
     menuClose.addEventListener('click', () => {
         menuOverlay.classList.remove('active');
+        document.body.classList.remove('menu-active');
     });
 
     // Close menu when clicking links
     document.querySelectorAll('.overlay-links a').forEach(link => {
         link.addEventListener('click', () => {
             menuOverlay.classList.remove('active');
+            document.body.classList.remove('menu-active');
         });
     });
 }
@@ -145,6 +148,27 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 50);
         });
     }
+});
+
+// Make Cards (Category & Product) Clickable
+document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.category-card, .product-card');
+    cards.forEach(card => {
+        card.addEventListener('click', () => {
+            // Find the link inside the card or use default products.html
+            const viewLink = card.querySelector('.category-view, .product-view');
+            let targetUrl = '/products.html';
+            
+            if (viewLink) {
+                const href = viewLink.getAttribute('href');
+                if (href && href !== '#') {
+                    targetUrl = href;
+                }
+            }
+            
+            window.location.href = targetUrl;
+        });
+    });
 });
 
 console.log('Maruti Brass Industries Website Initialized');
