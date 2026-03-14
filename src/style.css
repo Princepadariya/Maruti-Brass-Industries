@@ -677,6 +677,7 @@ nav.scrolled {
   color: #ffffff;
   letter-spacing: 0.05em;
   margin: 0;
+  transition: color 0.4s ease;
 }
 
 .vision-text-side {
@@ -693,6 +694,16 @@ nav.scrolled {
   max-width: 450px;
   letter-spacing: 0.02em;
   margin: 0;
+  transition: color 0.4s ease;
+}
+
+/* Hover Effect for Vision Row */
+.vision-row:hover .vision-title {
+  color: var(--primary-gold);
+}
+
+.vision-row:hover .vision-para {
+  color: #ffffff;
 }
 
 @media (max-width: 900px) {
