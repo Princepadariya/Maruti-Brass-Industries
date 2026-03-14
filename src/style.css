@@ -782,9 +782,9 @@ nav.scrolled {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 14px 28px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #888;
+  padding: 13px;
+  border: 1px solid rgb(255, 255, 255);
+  color: #FFFFFF;
   text-decoration: none;
   font-family: 'Source Code Pro', monospace;
   font-size: 0.75rem;
@@ -806,6 +806,7 @@ nav.scrolled {
 
 .scroll-link svg {
   transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  color: #C9A240;
 }
 
 .scroll-link:hover svg {
@@ -1423,7 +1424,7 @@ nav.scrolled {
   }
 
   .scroll-link {
-    padding: 12px 20px;
+    padding: 11px;
     font-size: 0.7rem;
   }
 
