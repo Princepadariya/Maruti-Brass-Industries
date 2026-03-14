@@ -703,11 +703,13 @@ nav.scrolled {
   .vision-details {
     margin: 0;
     gap: 4rem;
-    display: none; /* Explicitly hidden on mobile first */
+    display: none;
+    /* Explicitly hidden on mobile first */
   }
 
   .vision-details.show {
-    display: flex; /* Explicitly shown on toggle */
+    display: flex;
+    /* Explicitly shown on toggle */
     margin-top: 4rem;
   }
 
@@ -829,7 +831,7 @@ nav.scrolled {
   right: -100%;
   width: 100%;
   height: 100%;
-  background: #111111;
+  background: #1E1E1E;
   z-index: 2000;
   transition: var(--transition-smooth);
   display: flex;
