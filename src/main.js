@@ -109,4 +109,42 @@ window.addEventListener('DOMContentLoaded', () => {
     revealElements.forEach(el => revealObserver.observe(el));
 });
 
+// Highlight active page link in menu overlay
+document.addEventListener('DOMContentLoaded', () => {
+    const currentPath = window.location.pathname;
+    document.querySelectorAll('.overlay-links a').forEach(link => {
+        const linkPath = link.getAttribute('href');
+        if (currentPath === linkPath || 
+            (currentPath === '/' && linkPath === '/index.html') || 
+            (currentPath === '/index.html' && linkPath === '/') ||
+            (currentPath.endsWith(linkPath) && linkPath !== '/')) {
+            link.classList.add('active');
+        }
+    });
+});
+
+// Show Vision Details on Scroll Click
+document.addEventListener('DOMContentLoaded', () => {
+    const visionScrollBtn = document.querySelector('.about-vision-section .scroll-link');
+    const visionDetails = document.getElementById('mission-content');
+
+    if (visionScrollBtn && visionDetails) {
+        visionScrollBtn.addEventListener('click', (e) => {
+            // Prevent default just to handle the expansion first
+            e.preventDefault();
+            
+            visionDetails.classList.add('show');
+            
+            // Re-trigger reveal observer for newly visible elements
+            const newReveals = visionDetails.querySelectorAll('.reveal');
+            newReveals.forEach(el => revealObserver.observe(el));
+
+            // Smooth scroll to the content
+            setTimeout(() => {
+                visionDetails.scrollIntoView({ behavior: 'smooth' });
+            }, 50);
+        });
+    }
+});
+
 console.log('Maruti Brass Industries Website Initialized');
