@@ -1030,14 +1030,20 @@ nav.scrolled {
   font-weight: 400;
   color: var(--primary-gold);
   text-decoration: none;
-  letter-spacing: 0.05em;
+  transition: var(--transition-smooth);
   opacity: 0;
   visibility: hidden;
+  transform: translateX(-10px);
 }
 
 .product-card:hover .product-view {
   opacity: 1;
   visibility: visible;
+  transform: translateX(0);
+}
+
+.product-view:hover {
+  letter-spacing: 0.2em;
 }
 
 /* ── Testimonials Section ────────────────────────── */
