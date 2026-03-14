@@ -619,7 +619,6 @@ nav.scrolled {
   background-size: cover;
   background-position: center;
   pointer-events: none;
-  opacity: 0.4;
   mix-blend-mode: screen;
 }
 
@@ -746,7 +745,6 @@ nav.scrolled {
 
   .vision-grid-bg {
     width: 100vw;
-    opacity: 0.25;
   }
 }
 
